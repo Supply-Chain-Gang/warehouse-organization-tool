@@ -160,4 +160,8 @@ Feature Task - Use the velocity to determine the optimal placement in the facili
 Acceptance Tests - Test if higher velocity items are placed in better spots
 ```
 
+## Domain Modeling
+
+[Domain Model](Warehouse_Domain_Model.png)
+
 [Requirements ==>](requirements.md)
