@@ -121,3 +121,43 @@ __*How often will you merge?*__
 __*How will you communicate that its time to merge?*__
 
 - Just communicate via slack
+
+## USER STORIES
+
+__*Story 1: MVP*__ - As a user I want to use a tool that will help manage the inventory of my small business
+```
+Feature Task - Has working MVP
+Acceptance Tests - User stories 2-5 are working as intended
+```
+__*Story 2: Add / Delete / Search*__ - As a user I want to be able to add, delete, and search for items and get back information on where its being stored
+```
+Feature Task - Ability to add and search for items
+
+Acceptance Tests - Items are getting added properly, and are searchable
+```
+__*Story 3: Stats / Frequency*__ - As a user I want to be able to search for an item and see how often I use it
+```
+Feature Task - Track item velocity
+
+Acceptance Tests - See if each item is providing an accurate velocity
+```
+__*Story 4: Item totals*__ - As a user I want to know the total number of items in the inventory, and the total number per item
+```
+Feature Task - Keeping a total
+
+Acceptance Tests - See if each item has the correct amount
+```
+__*Story5: Shipping / Receiving*__ - As a user I want a tool to help manage my distribution centers shipment and receiving
+```
+Feature Task - Increment or decrement the number of items based on whether or not it was shipped or received
+
+Acceptance Tests - Make sure the item totals are accurate based on whether it was shipped or received
+```
+__*Story6: Item placement*__ - As a user I want the ability to find the optimal spot to place an item
+```
+Feature Task - Use the velocity to determine the optimal placement in the facility
+
+Acceptance Tests - Test if higher velocity items are placed in better spots
+```
+
+[Requirements ==>](requirements.md)
