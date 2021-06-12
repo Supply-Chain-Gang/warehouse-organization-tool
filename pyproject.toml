@@ -8,6 +8,8 @@ authors = ["Zach Hornung <Zachhornung@comcast.net>"]
 python = "^3.8.5"
 pandas = "^1.2.4"
 pygame = "^2.0.1"
+jupyterlab = "^3.0.16"
+seaborn = "^0.11.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
