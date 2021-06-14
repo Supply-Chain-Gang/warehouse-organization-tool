@@ -1,39 +1,17 @@
 import pandas as pd
 import numpy as np
 import sys
+import time
+from warehouse_organization_tool.utilities.data import InventoryManagement
 from warehouse_organization_tool.utilities.user_input import UserInput
 
 
 class MenuResponseMethods:
   def __init__(self):
     pass
-
-  # @staticmethod
-  # def sold_and_received(**kwargs):
-  #   if "sell" in kwargs:
-  #     transaction_type = "sell"
-  #     tensed_verb = "removed"
-
-  #   items = {}
-  #   while True:
-  #     item_sold = input(f"What item did you {transaction_type}? > ")
-  #     amount = -int(input(f"How many did you {transaction_type}? > "))
-  #     items[item_sold] = amount
-  #     print(f"{-amount} {item_sold}(s) removed from inventory")
-  #     print(f"Would you like to record another transaction?")
-  #     user_response = UserInput.get_and_validate_input()
-  #     if user_response == 'Y':
-  #       continue
-  #     if (user_response == 'N'):
-  #       print('Do you want to go to the main menu?')
-  #       user_response = UserInput.get_and_validate_input()
-  #       if user_response == 'N':
-  #         sys.exit()
-  #       return items
   
   @staticmethod
   def s_get_items_sold():
-    MenuResponseMethods.sold_and_received()
     items_sold = {}
     while True:
       item_sold = input("What item did you sell? > ")
@@ -52,13 +30,13 @@ class MenuResponseMethods:
         return items_sold
   
   @staticmethod
-  def r_get_recieved_items():
-    items_recieved = {}
+  def r_get_received_items():
+    items_received = {}
     while True:
-      item_recieved = input("What item did you recieve? > ")
-      amount = input("How many recieved? > ")
-      items_recieved[item_recieved] = amount
-      print(f"{items_recieved[item_recieved]} {item_recieved}(s) added to inventory")
+      item_received = input("What item did you receive? > ")
+      amount = int(input("How many received? > "))
+      items_received[item_received] = amount
+      print(f"{items_received[item_received]} {item_received}(s) added to inventory")
       print(f"Would you like to record another transaction?")
       user_response = UserInput.get_and_validate_input()
       if user_response == 'Y':
@@ -68,12 +46,11 @@ class MenuResponseMethods:
         user_response = UserInput.get_and_validate_input()
         if user_response == 'N':
           sys.exit()
-        return items_recieved
+        return items_received
   
   @staticmethod
-  def i_show_inventory():
-    inventory = pd.read_csv('warehouse_organization_tool/notebooks/inventory.csv')  
-    print(inventory)
+  def i_show_inventory(inventory_manager):
+    print(inventory_manager.df)
   
   @staticmethod
   def a_show_fancy_stats():
@@ -88,8 +65,15 @@ class MenuResponseMethods:
   @staticmethod
   def h_show_help():
     print("""
-          give more in depth explainations of what each choice does
+          Valid Commands
+          --------------
+          S = Amount of item(s) that have been sold in this session
+          R = Amount of item(s) that have been received in this session
+          I = Shows a list of your current inventory
+          A = More in depth stats based on your inventory
+          O = Optimizes placement of your inventory for best work flow
           """)
+    time.sleep(2)
   
   @staticmethod
   def e_exit():

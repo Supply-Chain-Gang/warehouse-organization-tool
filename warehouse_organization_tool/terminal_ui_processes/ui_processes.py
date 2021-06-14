@@ -1,3 +1,4 @@
+from warehouse_organization_tool.utilities.data import InventoryManagement
 import pandas as pd
 import numpy as np
 from warehouse_organization_tool.utilities.user_input import UserInput
@@ -14,7 +15,7 @@ class Menu:
       R = Item(s) recieved
       I = Show Inventory
       A = Run Inventory Analysis
-      O = Optimize placement.
+      O = Optimize placement
 
       H = Help
       E = Exit
@@ -22,10 +23,11 @@ class Menu:
   ***************************************
   """
 
-  def get_initial_user_decisions(self):
+  def get_initial_user_decisions(self, inventory_manager):
     print(self.prompt)
-
     user_response = UserInput.get_and_validate_input()
+    if user_response == "I":
+        return self.initial_response_dict[user_response](inventory_manager)
     return self.initial_response_dict[user_response]()
     
     

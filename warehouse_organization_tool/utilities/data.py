@@ -8,7 +8,7 @@ class InventoryManagement:
   
 
   def load_inventory(self):
-    self.df = pd.read_csv('./inventory.csv', dtype={"Current Inv": int, "Sales": int, "Recieved": int})
+    self.df = pd.read_csv('warehouse_organization_tool/notebooks/inventory.csv', dtype={"Current Inv": int, "Sales": int, "Recieved": int})
 
   def update_inventory(self, values_to_update = None):
     if values_to_update:
