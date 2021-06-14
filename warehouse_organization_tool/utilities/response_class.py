@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 import sys
+from warehouse_organization_tool.utilities.user_input import UserInput
+
 
 class ResponseMethods:
   def __init__(self):
@@ -8,12 +10,23 @@ class ResponseMethods:
   
   @staticmethod
   def s_get_items_sold():
+    items = {}
     while True:
       item_sold = input("What item did you sell? > ")
       amount = input("How many sold? > ")
+      items[item_sold] = amount
       print(f"{amount} {item_sold}(s) removed from inventory")
       print(f"Would you like to record another transaction?")
-      break
+      user_response = UserInput.get_and_validate_input()
+      if user_response == 'Y':
+        continue
+      if (user_response == 'N'):
+        print('Do you want to go to the main menu?')
+        user_response = UserInput.get_and_validate_input()
+        if user_response == 'N':
+          sys.exit()
+        
+        return
   
   @staticmethod
   def r_get_recieved_items():
