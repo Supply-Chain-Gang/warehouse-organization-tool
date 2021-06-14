@@ -21,7 +21,7 @@ class ResponseMethods:
   
   @staticmethod
   def i_show_inventory():
-    inventory = pd.read_csv('./inventory.csv')  
+    inventory = pd.read_csv('warehouse_organization_tool/notebooks/inventory.csv')  
     print(inventory)
   
   @staticmethod
