@@ -4,6 +4,7 @@ import sys
 import time
 from warehouse_organization_tool.utilities.data import InventoryManagement
 from warehouse_organization_tool.utilities.user_input import UserInput
+from warehouse_organization_tool.utilities.warehouse import Warehouse, Shelves
 
 
 class MenuResponseMethods:
@@ -59,8 +60,10 @@ class MenuResponseMethods:
   
   @staticmethod
   def o_optimize_warehouse_placement():
+    warehouse = Warehouse() 
+    warehouse.place_shelves()
     # we need some statistic for velocity or movement of each item in inventory. 
-    pass
+
   
   @staticmethod
   def h_show_help():
