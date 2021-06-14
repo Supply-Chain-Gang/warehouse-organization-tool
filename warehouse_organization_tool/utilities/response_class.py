@@ -7,15 +7,39 @@ from warehouse_organization_tool.utilities.user_input import UserInput
 class MenuResponseMethods:
   def __init__(self):
     pass
+
+  # @staticmethod
+  # def sold_and_received(**kwargs):
+  #   if "sell" in kwargs:
+  #     transaction_type = "sell"
+  #     tensed_verb = "removed"
+
+  #   items = {}
+  #   while True:
+  #     item_sold = input(f"What item did you {transaction_type}? > ")
+  #     amount = -int(input(f"How many did you {transaction_type}? > "))
+  #     items[item_sold] = amount
+  #     print(f"{-amount} {item_sold}(s) removed from inventory")
+  #     print(f"Would you like to record another transaction?")
+  #     user_response = UserInput.get_and_validate_input()
+  #     if user_response == 'Y':
+  #       continue
+  #     if (user_response == 'N'):
+  #       print('Do you want to go to the main menu?')
+  #       user_response = UserInput.get_and_validate_input()
+  #       if user_response == 'N':
+  #         sys.exit()
+  #       return items
   
   @staticmethod
   def s_get_items_sold():
+    MenuResponseMethods.sold_and_received()
     items_sold = {}
     while True:
       item_sold = input("What item did you sell? > ")
-      amount = input("How many sold? > ")
+      amount = -int(input("How many sold? > "))
       items_sold[item_sold] = amount
-      print(f"{amount} {item_sold}(s) removed from inventory")
+      print(f"{-amount} {item_sold}(s) removed from inventory")
       print(f"Would you like to record another transaction?")
       user_response = UserInput.get_and_validate_input()
       if user_response == 'Y':
