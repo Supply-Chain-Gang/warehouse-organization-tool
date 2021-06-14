@@ -4,7 +4,7 @@ import sys
 from warehouse_organization_tool.utilities.user_input import UserInput
 
 
-class ResponseMethods:
+class MenuResponseMethods:
   def __init__(self):
     pass
   

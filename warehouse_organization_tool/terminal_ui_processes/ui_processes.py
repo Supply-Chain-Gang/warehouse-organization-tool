@@ -1,18 +1,11 @@
 import pandas as pd
 import numpy as np
 from warehouse_organization_tool.utilities.user_input import UserInput
-from warehouse_organization_tool.utilities.response_class import ResponseMethods
+from warehouse_organization_tool.utilities.response_class import MenuResponseMethods as x
 
 class Menu:
   def __init__(self):
-    self.initial_response_dict = {
-      'S': ResponseMethods.s_get_items_sold, 
-      'R': ResponseMethods.r_get_recieved_items,
-      'I': ResponseMethods.i_show_inventory,
-      'A': ResponseMethods.a_show_fancy_stats,
-      'O': ResponseMethods.o_optimize_warehouse_placement,
-      'E': ResponseMethods.e_exit
-      }
+    self.initial_response_dict = {function[0].upper(): getattr(x,function) for function in dir(x) if not function.startswith('_')}
     self.prompt = """
   ***************************************
   Menu:
