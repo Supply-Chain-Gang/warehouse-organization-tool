@@ -3,7 +3,7 @@ import numpy as np
 from warehouse_organization_tool.utilities.user_input import UserInput
 from warehouse_organization_tool.utilities.response_class import ResponseMethods
 
-class InitialUserDecisions:
+class Menu:
   def __init__(self):
     self.initial_response_dict = {
       'S': ResponseMethods.s_get_items_sold, 
@@ -15,7 +15,7 @@ class InitialUserDecisions:
       }
     self.prompt = """
   ***************************************
-  Welcome:
+  Menu:
 
       S = Item(s) sold
       R = Item(s) recieved
@@ -33,11 +33,7 @@ class InitialUserDecisions:
     print(self.prompt)
 
     user_response = UserInput.get_and_validate_input()
-    
-    for response in self.initial_response_dict:
-      if response == user_response:
-        # call the method at the dictionary location
-        self.initial_response_dict[response]()
+    return self.initial_response_dict[user_response]()
     
     
     
