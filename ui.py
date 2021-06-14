@@ -8,7 +8,7 @@ def main():
   while True:
     csv_count_update = menu.get_initial_user_decisions()
     if csv_count_update:
-      pass
+      print(csv_count_update)
       #do csv update stuff here
 
 if __name__ == '__main__':
