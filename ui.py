@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from warehouse_organization_tool.utilities.user_input import UserInput
 from warehouse_organization_tool.terminal_ui_processes.ui_processes import Menu
+from warehouse_organization_tool.utilities.data import InventoryManagement
 
 class UpdateInformation:
   def __init__(self):
@@ -10,6 +11,8 @@ class UpdateInformation:
 def main():
   menu = Menu()
   update_info = UpdateInformation()
+  inventory_manager = InventoryManagement()
+  inventory_manager.load_inventory()
   while True:
     csv_count_update = menu.get_initial_user_decisions()
     # print(csv_count_update)
@@ -21,7 +24,10 @@ def main():
         update_info.item_for_update[item] = csv_count_update[item]
     print(csv_count_update)
     print(update_info.item_for_update)
-      #do csv update stuff here
+    inventory_manager.update_inventory(csv_count_update)
+
+  update_csv()
+    pass 
 
 if __name__ == '__main__':
   main()
