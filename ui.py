@@ -25,9 +25,8 @@ def main():
     print(csv_count_update)
     print(update_info.item_for_update)
     inventory_manager.update_inventory(csv_count_update)
+    inventory_manager.update_csv()
 
 if __name__ == '__main__':
   main()
   
-#   update_csv()
-#     pass 

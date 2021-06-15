@@ -17,5 +17,6 @@ class InventoryManagement:
         self.df.loc[named_item, "Current Inv"] += values_to_update[item]
     return self.df
 
+
   def update_csv(self):
-    pass
+    self.df.to_csv('warehouse_organization_tool/notebooks/inventory.csv', index=False)
