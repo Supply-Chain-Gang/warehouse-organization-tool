@@ -13,6 +13,7 @@ def main():
   update_info = UpdateInformation()
   inventory_manager = InventoryManagement()
   inventory_manager.load_inventory()
+  
   while True:
     csv_count_update = menu.get_initial_user_decisions(inventory_manager)
     # print(csv_count_update)
