@@ -64,6 +64,7 @@ class MenuResponseMethods:
   def o_optimize_warehouse_placement():
     warehouse = Warehouse() 
     warehouse.place_shelves()
+    warehouse.place_items()
     # we need some statistic for velocity or movement of each item in inventory. 
 
   

@@ -5,11 +5,11 @@ class DataAnalytics:
       self.df = pd.read_csv('warehouse_organization_tool/notebooks/historical.csv')
 
   def get_stats(self):
-    sales_data = self.df.groupby(self.df["item"]).sales.agg(["std","mean"]).to_dict()
+    sales_data = self.df.groupby(self.df["item"]).sales.agg(["std","mean","max"]).to_dict()
 
-    inv_data = self.df.groupby(self.df["item"]).inventory.agg(["std","mean"]).to_dict()
+    inv_data = self.df.groupby(self.df["item"]).inventory.agg(["std","mean","max"]).to_dict()
 
-    turnover_data = self.df.groupby(self.df["item"]).turnover.agg(["std","mean"]).to_dict()
+    turnover_data = self.df.groupby(self.df["item"]).turnover.agg(["std","mean","max"]).to_dict()
     
     mean = sales_data['mean']
     items = list(mean.keys())
@@ -20,3 +20,6 @@ class DataAnalytics:
 
     item_turnover_data = {item: {stat: turnover_data[stat][item] for stat in turnover_data  } for item in items}
     return (item_sales_data, item_inv_data, item_turnover_data)
+  
+  def get_sorted_max(self):
+    return self.df["turnover"].groupby(self.df['item']).max().sort_values(ascending=False).to_dict()
