@@ -4,7 +4,7 @@ class UserInput:
 
   @staticmethod
   def get_and_validate_input():
-    valid_responses = ['S','R','I','A','O','E','Y','N']
+    valid_responses = ['S','R','I','A','O','E','Y','N','H']
     response = input("> ").upper()
     while True:
       if not response in valid_responses:
