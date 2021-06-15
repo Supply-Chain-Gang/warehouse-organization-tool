@@ -1,85 +1,85 @@
-Item,Month,Sales,Number per order
-Lawn Chairs,Jan,5,10
-Lawn Chairs,Feb,8,
-Lawn Chairs,Mar,12,
-Lawn Chairs,Apr,12,
-Lawn Chairs,May,23,
-Lawn Chairs,Jun,45,
-Lawn Chairs,Jul,50,
-Lawn Chairs,Aug,43,
-Lawn Chairs,Sep,37,
-Lawn Chairs,Oct,12,
-Lawn Chairs,Nov,10,
-Lawn Chairs,Dec,8,
-Umbrellas,Jan,20,50
-Umbrellas,Feb,35,
-Umbrellas,Mar,60,
-Umbrellas,Apr,70,
-Umbrellas,May,60,
-Umbrellas,Jun,64,
-Umbrellas,Jul,67,
-Umbrellas,Aug,70,
-Umbrellas,Sep,57,
-Umbrellas,Oct,43,
-Umbrellas,Nov,22,
-Umbrellas,Dec,12,
-Coolers,Jan,0,
-Coolers,Feb,0,
-Coolers,Mar,12,
-Coolers,Apr,54,
-Coolers,May,57,
-Coolers,Jun,69,
-Coolers,Jul,78,
-Coolers,Aug,67,
-Coolers,Sep,59,
-Coolers,Oct,35,
-Coolers,Nov,28,
-Coolers,Dec,4,
-Crossbows,Jan,23,
-Crossbows,Feb,42,
-Crossbows,Mar,34,
-Crossbows,Apr,45,
-Crossbows,May,34,
-Crossbows,Jun,54,
-Crossbows,Jul,65,
-Crossbows,Aug,34,
-Crossbows,Sep,65,
-Crossbows,Oct,49,
-Crossbows,Nov,34,
-Crossbows,Dec,142,
-Waffle Irons,Jan,43,
-Waffle Irons,Feb,112,
-Waffle Irons,Mar,65,
-Waffle Irons,Apr,67,
-Waffle Irons,May,65,
-Waffle Irons,Jun,56,
-Waffle Irons,Jul,45,
-Waffle Irons,Aug,34,
-Waffle Irons,Sep,45,
-Waffle Irons,Oct,12,
-Waffle Irons,Nov,29,
-Waffle Irons,Dec,98,
-Pool Noodles,Jan,55,
-Pool Noodles,Feb,76,
-Pool Noodles,Mar,98,
-Pool Noodles,Apr,56,
-Pool Noodles,May,76,
-Pool Noodles,Jun,46,
-Pool Noodles,Jul,67,
-Pool Noodles,Aug,54,
-Pool Noodles,Sep,90,
-Pool Noodles,Oct,26,
-Pool Noodles,Nov,56,
-Pool Noodles,Dec,76,
-Flippy Floppies,Jan,87,
-Flippy Floppies,Feb,67,
-Flippy Floppies,Mar,90,
-Flippy Floppies,Apr,78,
-Flippy Floppies,May,86,
-Flippy Floppies,Jun,68,
-Flippy Floppies,Jul,56,
-Flippy Floppies,Aug,90,
-Flippy Floppies,Sep,67,
-Flippy Floppies,Oct,78,
-Flippy Floppies,Nov,45,
-Flippy Floppies,Dec,65,
+Item,Month,Sales,Stock on Hand,Orders,Order Size
+Lawn Chairs,Jan,5,50,0,20
+Lawn Chairs,Feb,8,45,0,20
+Lawn Chairs,Mar,12,37,0,20
+Lawn Chairs,Apr,12,25,1,20
+Lawn Chairs,May,23,33,1,20
+Lawn Chairs,Jun,45,30,2,20
+Lawn Chairs,Jul,50,25,2,20
+Lawn Chairs,Aug,43,15,2,20
+Lawn Chairs,Sep,37,12,2,20
+Lawn Chairs,Oct,12,15,2,20
+Lawn Chairs,Nov,10,43,1,20
+Lawn Chairs,Dec,8,53,0,20
+Umbrellas,Jan,20,75,0,25
+Umbrellas,Feb,35,55,0,25
+Umbrellas,Mar,60,20,5,25
+Umbrellas,Apr,70,85,1,25
+Umbrellas,May,60,40,2,25
+Umbrellas,Jun,64,30,2,25
+Umbrellas,Jul,67,16,5,25
+Umbrellas,Aug,70,74,2,25
+Umbrellas,Sep,57,54,2,25
+Umbrellas,Oct,43,47,4,25
+Umbrellas,Nov,22,104,0,25
+Umbrellas,Dec,12,82,0,25
+Coolers,Jan,0,100,0,10
+Coolers,Feb,0,100,0,10
+Coolers,Mar,12,100,0,10
+Coolers,Apr,54,88,0,10
+Coolers,May,57,34,8,10
+Coolers,Jun,69,57,8,10
+Coolers,Jul,78,68,6,10
+Coolers,Aug,67,50,6,10
+Coolers,Sep,59,43,6,10
+Coolers,Oct,35,44,6,10
+Coolers,Nov,28,69,0,10
+Coolers,Dec,4,41,0,10
+Crossbows,Jan,23,50,0,5
+Crossbows,Feb,42,27,5,5
+Crossbows,Mar,34,10,5,5
+Crossbows,Apr,45,1,10,5
+Crossbows,May,34,6,10,5
+Crossbows,Jun,54,22,10,5
+Crossbows,Jul,65,18,10,5
+Crossbows,Aug,34,3,10,5
+Crossbows,Sep,65,19,10,5
+Crossbows,Oct,49,4,10,5
+Crossbows,Nov,34,5,10,5
+Crossbows,Dec,142,21,0,5
+Waffle Irons,Jan,43,200,0,20
+Waffle Irons,Feb,112,157,0,20
+Waffle Irons,Mar,65,45,3,20
+Waffle Irons,Apr,67,40,2,20
+Waffle Irons,May,65,13,3,20
+Waffle Irons,Jun,56,8,3,20
+Waffle Irons,Jul,45,12,3,20
+Waffle Irons,Aug,34,27,3,20
+Waffle Irons,Sep,45,53,2,20
+Waffle Irons,Oct,12,48,0,20
+Waffle Irons,Nov,29,36,0,20
+Waffle Irons,Dec,98,7,0,20
+Pool Noodles,Jan,55,200,0,50
+Pool Noodles,Feb,76,145,0,50
+Pool Noodles,Mar,98,69,1,50
+Pool Noodles,Apr,56,21,2,50
+Pool Noodles,May,76,65,3,50
+Pool Noodles,Jun,46,139,3,50
+Pool Noodles,Jul,67,243,2,50
+Pool Noodles,Aug,54,276,0,50
+Pool Noodles,Sep,90,222,0,50
+Pool Noodles,Oct,26,132,0,50
+Pool Noodles,Nov,56,106,0,50
+Pool Noodles,Dec,76,50,0,50
+Flippy Floppies,Jan,87,200,0,100
+Flippy Floppies,Feb,67,113,0,100
+Flippy Floppies,Mar,90,46,1,100
+Flippy Floppies,Apr,78,56,1,100
+Flippy Floppies,May,86,78,1,100
+Flippy Floppies,Jun,68,92,1,100
+Flippy Floppies,Jul,56,124,1,100
+Flippy Floppies,Aug,90,168,1,100
+Flippy Floppies,Sep,67,178,1,100
+Flippy Floppies,Oct,78,211,1,100
+Flippy Floppies,Nov,45,233,0,100
+Flippy Floppies,Dec,65,188,0,100
