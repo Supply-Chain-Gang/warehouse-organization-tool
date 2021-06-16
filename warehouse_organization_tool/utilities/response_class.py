@@ -29,7 +29,8 @@ class MenuResponseMethods:
         if user_response == 'N':
           sys.exit()
         return items_sold
-  
+    
+
   @staticmethod
   def r_get_received_items():
     items_received = {}
@@ -48,10 +49,11 @@ class MenuResponseMethods:
         if user_response == 'N':
           sys.exit()
         return items_received
+      
   
   @staticmethod
   def i_show_inventory(inventory_manager):
-    print(inventory_manager.df)
+    print(inventory_manager.df.to_string(index=False))
   
   @staticmethod
   def a_show_fancy_stats():
@@ -62,6 +64,7 @@ class MenuResponseMethods:
   def o_optimize_warehouse_placement():
     warehouse = Warehouse() 
     warehouse.place_shelves()
+    warehouse.place_items()
     # we need some statistic for velocity or movement of each item in inventory. 
 
   
