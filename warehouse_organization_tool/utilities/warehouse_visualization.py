@@ -9,39 +9,73 @@ from mpl_toolkits.mplot3d import Axes3D
 class Warehouse_Visualization(Warehouse):
   def __init__(self,**kwargs):
       super().__init__(**kwargs)
+      
+  def calculate_x_pos(self):
+    scaling_factor = self.shelves.length
+    xpos = []
+
+    for i in range(self.y_grid_space+1):
+      counter = 0
+      for j in range(1,self.x_grid_space+1):
+        
+        if (i == self.y_grid_space) and (j == ((self.x_grid_space // 2)+1)):
+          xpos.append(counter+scaling_factor)
+          counter += scaling_factor
+        
+        if j == (self.x_grid_space // 2)+1:
+          xpos.append((self.width-counter))
+          counter += (scaling_factor*2)
+          continue
+
+        if j == 1:
+          xpos.append(0)
+          counter += scaling_factor
+          continue
+        
+        if (i == 5) and (j==4):
+          counter-=scaling_factor
+
+        xpos.append(counter)
+        counter += scaling_factor
+
+    return xpos
+  
+  def calculate_y_pos(self):
+    
+    ypos = []
+    counter = 0
+    scaling_factor = (self.shelves.depth + self.lane_width_size)
+
+    for _ in range(self.y_grid_space+1):
+      for _ in range(self.x_grid_space):
+        ypos.append(1+counter)
+      counter += scaling_factor
+    ypos.append(1+counter-scaling_factor)
+    
+    return ypos
+  
+  def calculate_z_pos(self):
+    zpos = (self.x_grid_space*(self.y_grid_space+1)) + 1
+    return zpos
 
   def plot_grid(self):
-    # fig = plt.figure(figsize=(8, 3))
-    # ax1 = fig.add_subplot(121, projection='3d')
-
     fig = plt.figure()
     ax = fig.add_subplot(111, projection = "3d")
 
-    ax.set_xlabel("x")
-    ax.set_ylabel("y") 
-    ax.set_zlabel("z")
-    ax.set_xlim3d(0,11)
-    ax.set_ylim3d(0,21) 
+    ax.set_xlabel("Width of room in inches")
+    ax.set_ylabel("Length of room in inches") 
+    ax.set_zlabel("height of room in inches")
+    ax.set_xlim3d(0,self.width)
+    ax.set_ylim3d(0,self.length)
+    ax.set_zlim3d(0,self.height) 
 
-    xpos = [1,3,7,9,1,3,7,9,1,3,7,9,1,3,7,9,1,3,7,9,1,3,5,7,9]
-    ypos = [1,1,1,1,5,5,5,5,9,9,9,9,13,13,13,13,17,17,17,17,21,21,21,21,21]
-    zpos = np.zeros(25)
+    ypos = self.calculate_y_pos()
+    zpos = np.zeros(self.calculate_z_pos())
+    xpos = self.calculate_x_pos()
 
-    # xpos = [1,2]
-    # ypos = [1,2]
-    # zpos = [1,2] 
-
-    # xpos = [2,5,8,2,5,8,2,5,8]
-    # ypos = [1,1,1,5,5,5,9,9,9]
-    # zpos = np.zeros(9)
-
-    # dx = np.ones(self.x_grid_space * self.y_grid_space)
-    # dy = np.ones(self.x_grid_space * self.y_grid_space)
-    # dz = [1 for _ in range(self.x_grid_space * self.y_grid_space)]  # the heights of the 4 bar sets
-
-    dx = [1]
-    dy = [1]
-    dz = [1 for _ in range(2)]
+    dx = [self.shelves.length-20]
+    dy = [self.shelves.depth]
+    dz = [self.shelves.height for _ in range(2)]
 
     _zpos = zpos   # the starting zpos for each bar
     colors = ['b','r']
@@ -51,38 +85,6 @@ class Warehouse_Visualization(Warehouse):
 
     plt.gca().invert_xaxis()
     plt.show()
-
-
-    # # fake data
-    # _x = np.arange(4)
-    # _y = np.arange(5)
-    # _xx, _yy = np.meshgrid(_x, _y)
-    # x, y = _xx.ravel(), _yy.ravel()
-
-    # top = x + y
-    # bottom = np.zeros_like(top)
-    # width = depth = 1
-
-    # ax1.bar3d(x, y, bottom, width, depth, top, shade=True)
-    # ax1.set_title('Shaded')
-
-    # plt.show()
-    
-    # fig = plt.figure()
-    # ax1 = fig.add_subplot(111, projection='3d')
-
-    # xpos = [x for x in range(self.x_grid_space)]
-    # ypos = [y for y in range(self.y_grid_space)]
-    # zpos = [0 for _ in range(self.z_grid_space)]
-
-    # dx = np.ones(len(xpos))
-    # dy = np.ones(len(ypos))
-    # dz = [self.z_grid_space for _ in range(self.x_grid_space)]
-
-    # ax1.bar3d(xpos,ypos,zpos,dx,dy,dz)
-
-    # # plt.get_current_fig_manager().show()
-    # plt.show()
 
 if __name__ == "__main__":
   warehouse = Warehouse_Visualization()
