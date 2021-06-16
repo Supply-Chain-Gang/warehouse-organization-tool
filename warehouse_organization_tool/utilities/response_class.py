@@ -57,7 +57,31 @@ class MenuResponseMethods:
   
   @staticmethod
   def a_show_fancy_stats():
-    pass
+    df = pd.read_csv('warehouse_organization_tool/notebooks/historical.csv')
+    print("""
+    
+    
+    ****INVENTORY STATS PER ITEM****
+    
+    
+    """)
+    print(df.groupby(df["item"]).inventory.agg(["mean","max"]).round())
+    print("""
+    
+    
+    ****SALES STATS PER ITEM****
+    
+    
+    """)
+    print(df.groupby(df["item"]).sales.agg(["mean","max"]).round())
+    print("""
+    
+    
+    ****BEST MONTH FOR EACH ITEM****
+    
+    
+    """)
+    print(df.loc[df.groupby("item")["sales"].idxmax()])
   
   
   @staticmethod
