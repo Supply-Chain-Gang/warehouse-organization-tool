@@ -12,6 +12,7 @@ class Warehouse:
     self.area = length*width
     self.volume = self.area*height
     self.lane_width_size = 48
+    self.shelves = Shelves()
     self.x_grid_space = 0
     self.y_grid_space = 0
     self.z_grid_space = 0
