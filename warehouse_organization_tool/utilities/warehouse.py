@@ -5,7 +5,7 @@ from warehouse_organization_tool.utilities.df import DataAnalytics
 
 class Warehouse:
   #all dimensions in inches
-  def __init__(self, length=50, width=50, height=10, **kwargs):
+  def __init__(self, length=50, width=50, height=10,df=None, **kwargs):
     self.length = length*12
     self.width = width*12
     self.height = height*12
@@ -17,7 +17,7 @@ class Warehouse:
     self.z_grid_space = 0
     self.grid = None
     self.locations_of_items = {}
-    self.data_analyzer = DataAnalytics()
+    self.data_analyzer = DataAnalytics(df)
 
     if 'lane_size' in kwargs:
       self.lane_width_size = kwargs['lane_size']*12
