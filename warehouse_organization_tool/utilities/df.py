@@ -1,8 +1,11 @@
 import pandas as pd
 
 class DataAnalytics:
-  def __init__(self):
-      self.df = pd.read_csv('warehouse_organization_tool/notebooks/historical.csv')
+  def __init__(self, df = None):
+      if df is None:
+        self.df = pd.read_csv('warehouse_organization_tool/notebooks/historical.csv')
+      else:
+        self.df = df
 
   def get_stats(self):
     sales_data = self.df.groupby(self.df["item"]).sales.agg(["std","mean","max"]).to_dict()
