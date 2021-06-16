@@ -1,85 +1,85 @@
-item,month,sales,inventory,orders,order size,turnover
-Lawn Chairs,Jan,5,50,0,20,0.1000
-Lawn Chairs,Feb,8,45,0,20,0.1778
-Lawn Chairs,Mar,12,37,0,20,0.3243
-Lawn Chairs,Apr,12,25,1,20,0.4800
-Lawn Chairs,May,23,33,1,20,0.6970
-Lawn Chairs,Jun,45,30,2,20,1.5000
-Lawn Chairs,Jul,50,25,2,20,2.0000
-Lawn Chairs,Aug,43,15,2,20,2.8667
-Lawn Chairs,Sep,37,12,2,20,3.0833
-Lawn Chairs,Oct,12,15,2,20,0.8000
-Lawn Chairs,Nov,10,43,1,20,0.2326
-Lawn Chairs,Dec,8,53,0,20,0.1509
-Umbrellas,Jan,20,75,0,25,0.2667
-Umbrellas,Feb,35,55,0,25,0.6364
-Umbrellas,Mar,60,20,5,25,3.0000
-Umbrellas,Apr,70,85,1,25,0.8235
-Umbrellas,May,60,40,2,25,1.5000
-Umbrellas,Jun,64,30,2,25,2.1333
-Umbrellas,Jul,67,16,5,25,4.1875
-Umbrellas,Aug,70,74,2,25,0.9459
-Umbrellas,Sep,57,54,2,25,1.0556
-Umbrellas,Oct,43,47,4,25,0.9149
-Umbrellas,Nov,22,104,0,25,0.2115
-Umbrellas,Dec,12,82,0,25,0.1463
-Coolers,Jan,0,100,0,10,0.0000
-Coolers,Feb,0,100,0,10,0.0000
-Coolers,Mar,12,100,0,10,0.1200
-Coolers,Apr,54,88,0,10,0.6136
-Coolers,May,57,34,8,10,1.6765
-Coolers,Jun,69,57,8,10,1.2105
-Coolers,Jul,78,68,6,10,1.1471
-Coolers,Aug,67,50,6,10,1.3400
-Coolers,Sep,59,43,6,10,1.3721
-Coolers,Oct,35,44,6,10,0.7955
-Coolers,Nov,28,69,0,10,0.4058
-Coolers,Dec,4,41,0,10,0.0976
-Crossbows,Jan,23,50,0,5,0.4600
-Crossbows,Feb,42,27,5,5,1.5556
-Crossbows,Mar,34,10,6,5,3.4000
-Crossbows,Apr,45,6,10,5,7.5000
-Crossbows,May,34,11,10,5,3.0909
-Crossbows,Jun,54,27,10,5,2.0000
-Crossbows,Jul,65,23,10,5,2.8261
-Crossbows,Aug,34,8,10,5,4.2500
-Crossbows,Sep,65,24,10,5,2.7083
-Crossbows,Oct,49,9,10,5,5.4444
-Crossbows,Nov,34,10,10,5,3.4000
-Crossbows,Dec,142,26,0,5,5.4615
-Waffle Irons,Jan,43,200,0,20,0.2150
-Waffle Irons,Feb,112,157,0,20,0.7134
-Waffle Irons,Mar,65,45,3,20,1.4444
-Waffle Irons,Apr,67,40,2,20,1.6750
-Waffle Irons,May,65,13,3,20,5.0000
-Waffle Irons,Jun,56,8,3,20,7.0000
-Waffle Irons,Jul,45,12,3,20,3.7500
-Waffle Irons,Aug,34,27,3,20,1.2593
-Waffle Irons,Sep,45,53,2,20,0.8491
-Waffle Irons,Oct,12,48,0,20,0.2500
-Waffle Irons,Nov,29,36,0,20,0.8056
-Waffle Irons,Dec,98,7,0,20,14.0000
-Pool Noodles,Jan,55,200,0,50,0.2750
-Pool Noodles,Feb,76,145,0,50,0.5241
-Pool Noodles,Mar,98,69,1,50,1.4203
-Pool Noodles,Apr,56,21,2,50,2.6667
-Pool Noodles,May,76,65,3,50,1.1692
-Pool Noodles,Jun,46,139,3,50,0.3309
-Pool Noodles,Jul,67,243,2,50,0.2757
-Pool Noodles,Aug,54,276,0,50,0.1957
-Pool Noodles,Sep,90,222,0,50,0.4054
-Pool Noodles,Oct,26,132,0,50,0.1970
-Pool Noodles,Nov,56,106,0,50,0.5283
-Pool Noodles,Dec,76,50,0,50,1.5200
-Flippy Floppies,Jan,87,200,0,100,0.4350
-Flippy Floppies,Feb,67,113,0,100,0.5929
-Flippy Floppies,Mar,90,46,1,100,1.9565
-Flippy Floppies,Apr,78,56,1,100,1.3929
-Flippy Floppies,May,86,78,1,100,1.1026
-Flippy Floppies,Jun,68,92,1,100,0.7391
-Flippy Floppies,Jul,56,124,1,100,0.4516
-Flippy Floppies,Aug,90,168,1,100,0.5357
-Flippy Floppies,Sep,67,178,1,100,0.3764
-Flippy Floppies,Oct,78,211,1,100,0.3697
-Flippy Floppies,Nov,45,233,0,100,0.1931
-Flippy Floppies,Dec,65,188,0,100,0.3457
+item,month,sales,inventory,orders,order size,turnover,,,,,,,,
+lawn chair,Jan,5,50,0,20,0.1000,,item,AVERAGE of sales,AVERAGE of inventory,AVERAGE of turnover,STDEV of sales,STDEV of turnover,STDEV of inventory
+lawn chair,Feb,8,45,0,20,0.1778,,cooler,39,66,0.73,29.05,0.61,25.16
+lawn chair,Mar,12,37,0,20,0.3243,,crossbows,52,23,3.21,31.24,1.87,20.80
+lawn chair,Apr,12,25,1,20,0.4800,,flippy floppies,73,141,0.71,14.23,0.52,63.85
+lawn chair,May,23,33,1,20,0.6970,,lawn chair,22,32,1.03,16.80,1.08,14.02
+lawn chair,Jun,45,30,2,20,1.5000,,pool noodle,65,139,0.79,19.87,0.76,81.79
+lawn chair,Jul,50,25,2,20,2.0000,,umbrellas,48,57,1.32,21.11,1.23,27.65
+lawn chair,Aug,43,15,2,20,2.8667,,waffle iron,56,54,3.08,28.19,4.03,61.10
+lawn chair,Sep,37,12,2,20,3.0833,,Grand Total,51,73,1.55,27.70,2.05,64.63
+lawn chair,Oct,12,15,2,20,0.8000,,,,,,,,
+lawn chair,Nov,10,43,1,20,0.2326,,,,,,,,
+lawn chair,Dec,8,53,0,20,0.1509,,,,,,,,
+umbrellas,Jan,20,75,0,25,0.2667,,,,,,,,
+umbrellas,Feb,35,55,0,25,0.6364,,,,,,,,
+umbrellas,Mar,60,20,5,25,3.0000,,,,,,,,
+umbrellas,Apr,70,85,1,25,0.8235,,,,,,,,
+umbrellas,May,60,40,2,25,1.5000,,,,,,,,
+umbrellas,Jun,64,30,2,25,2.1333,,,,,,,,
+umbrellas,Jul,67,16,5,25,4.1875,,,,,,,,
+umbrellas,Aug,70,74,2,25,0.9459,,,,,,,,
+umbrellas,Sep,57,54,2,25,1.0556,,,,,,,,
+umbrellas,Oct,43,47,4,25,0.9149,,,,,,,,
+umbrellas,Nov,22,104,0,25,0.2115,,,,,,,,
+umbrellas,Dec,12,82,0,25,0.1463,,,,,,,,
+cooler,Jan,0,100,0,10,0.0000,,,,,,,,
+cooler,Feb,0,100,0,10,0.0000,,,,,,,,
+cooler,Mar,12,100,0,10,0.1200,,,,,,,,
+cooler,Apr,54,88,0,10,0.6136,,,,,,,,
+cooler,May,57,34,8,10,1.6765,,,,,,,,
+cooler,Jun,69,57,8,10,1.2105,,,,,,,,
+cooler,Jul,78,68,6,10,1.1471,,,,,,,,
+cooler,Aug,67,50,6,10,1.3400,,,,,,,,
+cooler,Sep,59,43,6,10,1.3721,,,,,,,,
+cooler,Oct,35,44,6,10,0.7955,,,,,,,,
+cooler,Nov,28,69,0,10,0.4058,,,,,,,,
+cooler,Dec,4,41,0,10,0.0976,,,,,,,,
+crossbows,Jan,23,50,0,5,0.4600,,,,,,,,
+crossbows,Feb,42,27,5,5,1.5556,,,,,,,,
+crossbows,Mar,34,10,6,5,3.4000,,,,,,,,
+crossbows,Apr,45,6,10,5,7.5000,,,,,,,,
+crossbows,May,34,11,10,5,3.0909,,,,,,,,
+crossbows,Jun,54,27,10,5,2.0000,,,,,,,,
+crossbows,Jul,65,23,10,5,2.8261,,,,,,,,
+crossbows,Aug,34,8,10,5,4.2500,,,,,,,,
+crossbows,Sep,65,24,10,5,2.7083,,,,,,,,
+crossbows,Oct,49,9,10,5,5.4444,,,,,,,,
+crossbows,Nov,34,10,20,5,3.4000,,,,,,,,
+crossbows,Dec,142,76,5,5,1.8684,,,,,,,,
+waffle iron,Jan,43,200,0,20,0.2150,,,,,,,,
+waffle iron,Feb,112,157,0,20,0.7134,,,,,,,,
+waffle iron,Mar,65,45,3,20,1.4444,,,,,,,,
+waffle iron,Apr,67,40,2,20,1.6750,,,,,,,,
+waffle iron,May,65,13,3,20,5.0000,,,,,,,,
+waffle iron,Jun,56,8,3,20,7.0000,,,,,,,,
+waffle iron,Jul,45,12,3,20,3.7500,,,,,,,,
+waffle iron,Aug,34,27,3,20,1.2593,,,,,,,,
+waffle iron,Sep,45,53,2,20,0.8491,,,,,,,,
+waffle iron,Oct,12,48,0,20,0.2500,,,,,,,,
+waffle iron,Nov,29,36,0,20,0.8056,,,,,,,,
+waffle iron,Dec,98,7,0,20,14.0000,,,,,,,,
+pool noodle,Jan,55,200,0,50,0.2750,,,,,,,,
+pool noodle,Feb,76,145,0,50,0.5241,,,,,,,,
+pool noodle,Mar,98,69,1,50,1.4203,,,,,,,,
+pool noodle,Apr,56,21,2,50,2.6667,,,,,,,,
+pool noodle,May,76,65,3,50,1.1692,,,,,,,,
+pool noodle,Jun,46,139,3,50,0.3309,,,,,,,,
+pool noodle,Jul,67,243,2,50,0.2757,,,,,,,,
+pool noodle,Aug,54,276,0,50,0.1957,,,,,,,,
+pool noodle,Sep,90,222,0,50,0.4054,,,,,,,,
+pool noodle,Oct,26,132,0,50,0.1970,,,,,,,,
+pool noodle,Nov,56,106,0,50,0.5283,,,,,,,,
+pool noodle,Dec,76,50,0,50,1.5200,,,,,,,,
+flippy floppies,Jan,87,200,0,100,0.4350,,,,,,,,
+flippy floppies,Feb,67,113,0,100,0.5929,,,,,,,,
+flippy floppies,Mar,90,46,1,100,1.9565,,,,,,,,
+flippy floppies,Apr,78,56,1,100,1.3929,,,,,,,,
+flippy floppies,May,86,78,1,100,1.1026,,,,,,,,
+flippy floppies,Jun,68,92,1,100,0.7391,,,,,,,,
+flippy floppies,Jul,56,124,1,100,0.4516,,,,,,,,
+flippy floppies,Aug,90,168,1,100,0.5357,,,,,,,,
+flippy floppies,Sep,67,178,1,100,0.3764,,,,,,,,
+flippy floppies,Oct,78,211,1,100,0.3697,,,,,,,,
+flippy floppies,Nov,45,233,0,100,0.1931,,,,,,,,
+flippy floppies,Dec,65,188,0,100,0.3457,,,,,,,,

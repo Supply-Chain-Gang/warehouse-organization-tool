@@ -14,8 +14,15 @@ class MenuResponseMethods:
   @staticmethod
   def s_get_items_sold():
     items_sold = {}
+    df = pd.read_csv('warehouse_organization_tool/notebooks/inventory.csv')
+    sales_data = df.groupby(df["Item"]).Inventory.agg(["mean"]).to_dict()
+    mean = sales_data['mean']
+    items = list(mean.keys())
     while True:
       item_sold = input("What item did you sell? > ")
+      if item_sold not in items:
+        print("Item not in inventory")
+        item_sold = input("What item did you sell? > ")
       amount = -int(input("How many sold? > "))
       items_sold[item_sold] = amount
       print(f"{-amount} {item_sold}(s) removed from inventory")

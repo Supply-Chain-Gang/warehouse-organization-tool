@@ -1,7 +1,8 @@
-Item,Current Inv,Sales,Recieved
-Lawn Chairs,20,0,0
-Umbrellas,50,0,0
-Coolers,15,0,0
-Paving Stones,10,0,0
-Pool Noodles,75,0,0
-Flippy Floppies,20,0,0
+Item,Inventory,Sales,Recieved
+lawn chair,20,0,0
+umbrella,50,0,0
+cooler,19,0,0
+crossbow,54,0,0
+waffle iron,56,0,0
+pool noodle,75,0,0
+flippy floppies,20,0,0
