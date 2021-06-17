@@ -3,72 +3,37 @@
 # import time
 # import sys
 # import random
+from termcolor import colored
+from pyfiglet import Figlet
 from warehouse_organization_tool.utilities.user_input import UserInput
 
 class WelcomeScreen:
-    def __init__(self):
-        self.pipe = []
-        self.slash = []
-        self.u_score = []
-        self.manager = str(open("warehouse_organization_tool/utilities/welcome_screen/pattern.txt").read().rstrip())
+    # def __init__(self):
+        # self.pipe = []
+        # self.slash = []
+        # self.u_score = []
+        # self.manager = str(open("warehouse_organization_tool/utilities/welcome_screen/pattern.txt").read().rstrip())
 
-    def colored_characters(self, text):
-        # text = self.manager
-        def prRed(skk): 
-            return("\033[91m {}\033[00m" .format(skk))
+    @staticmethod
+    def print_prompt():
+        print(colored("*********************************************", 'blue'))        
+        f = Figlet(font="smslant")
+        print(colored(f.renderText('Warehouse Manager'),'green'))
+        print(colored('MENU:', 'green', 'on_yellow'))
+        print(colored("""
+        S = Item(s) sold
+        R = Item(s) recieved
+        I = Show Inventory
+        A = Run Inventory Analysis
+        O = Optimize placement
+        H = Help
+        E = Exit
+        """, 'yellow'))
+        print(colored("*********************************************", 'blue'))
 
-        def prGreen(skk): 
-            return("\033[92m {}\033[00m" .format(skk))
-
-        def prCyan(skk): 
-            return("\033[96m {}\033[00m" .format(skk))
-
-        # for char in text:
-        #     if char == "/":
-        #         print(prRed(char))
-        #     if char == "|":
-        #         print(prRed(char))
-        #     if char == "_":
-        #         print(prRed(char))
-        #     if char == "*":
-        #         print(prCyan(char))
-        #     else:
-        #         print(prGreen(char))
-        # print(prRed(text))
-
-        print(prCyan("*******************************************"))
-        print(prGreen(" _      __             __                   "))
-        print(prGreen("| | /| / /__ ________ / /  ___  __ ________ "))
-        print(prGreen("| |/ |/ / _ `/ __/ -_) _ \/ _ \/ // (_-< -_)"))
-        print(prGreen("|__/|__/\_,_/_/  \__/_//_/\___/\_,_/___|__/ "))
-        print(prGreen("   __  ___                           "))
-        print(prGreen("  /  |/  /__ ____  ___ ____ ____ ____"))
-        print(prGreen(" / /|_/ / _ `/ _ \/ _ `/ _ `/ -_) __/"))
-        print(prGreen("/_/  /_/\_,_/_//_/\_,_/\_, /\__/_/   "))
-        print(prGreen("                      /___/          "))
-        print(prRed("Menu:"))
-        print(prRed("S = Item(s) sold "))
-        print(prRed("R = Item(s) recieved"))
-        print(prRed("I = Show Inventory"))
-        print(prRed("I = Show Inventory"))
-        print(prRed("I = Show Inventory"))
-        print(prRed("A = Run Inventory Analysis"))
-        print(prRed("O = Optimize placement"))
-        print(prRed("H = Help"))
-        print(prRed("E = Exit"))
-        print(prCyan("*******************************************"))
-
-if __name__ == "__main__":
-    welcome_screen = WelcomeScreen()
-    welcome_screen.colored_characters(welcome_screen.manager)
-
-
-
-
-
-
-
-
+# if __name__ == "__main__":
+#     welcome_screen = WelcomeScreen()
+#     welcome_screen.colored_characters()
 
 """
 [summary] Below is code to make the coloring of the characters animated.

@@ -1,6 +1,3 @@
-# import pandas as pd
-# import numpy as np
-from warehouse_organization_tool.utilities.user_input import UserInput
 from warehouse_organization_tool.terminal_ui_processes.ui_processes import Menu
 from warehouse_organization_tool.utilities.data import InventoryManagement
 
@@ -15,7 +12,6 @@ def main():
   inventory_manager.load_inventory()
   while True:
     csv_count_update = menu.get_initial_user_decisions(inventory_manager)
-    # print(csv_count_update)
     if csv_count_update:
       for item in csv_count_update:
         if item in update_info.item_for_update:
