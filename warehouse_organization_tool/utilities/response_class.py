@@ -5,6 +5,7 @@ import time
 from warehouse_organization_tool.utilities.data import InventoryManagement
 from warehouse_organization_tool.utilities.user_input import UserInput
 from warehouse_organization_tool.utilities.warehouse import Warehouse, Shelves
+import re
 
 
 class MenuResponseMethods:
@@ -55,8 +56,11 @@ class MenuResponseMethods:
     items_received = {}
     while True:
       item_received = input("What item did you receive? > ")
-      amount = int(input("How many received? > "))
-      items_received[item_received] = amount
+      amount = input("How many received? > ")
+      if re.search('[a-zA-Z]+', amount):
+        print("Not a valid amount")
+        continue
+      items_received[item_received] = int(amount)
       print(f"{items_received[item_received]} {item_received}(s) added to inventory")
       print(f"Would you like to record another transaction?")
       user_response = UserInput.get_and_validate_input()
