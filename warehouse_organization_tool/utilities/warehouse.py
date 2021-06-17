@@ -89,7 +89,6 @@ class Warehouse:
           continue
         
     print(self.grid)
-    print(self.locations_of_items['Coolers'])
     
 
 class Shelves:

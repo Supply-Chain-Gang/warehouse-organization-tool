@@ -33,4 +33,3 @@ class InventoryManagement:
   def update_csv(self):
     """this method actually does the overwriting of the csv with the data in the dataframe.
     """
-    self.df.to_csv('warehouse_organization_tool/notebooks/inventory.csv', index=False)
