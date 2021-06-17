@@ -7,41 +7,63 @@ from mpl_toolkits.mplot3d import Axes3D
 
 # %%
 class Warehouse_Visualization(Warehouse):
+  """Extends the Warehouse class. all methods in this class are for rendering the 3d matplot lib bar graph.
+
+  Args:
+      Warehouse (class): Contains warehouse specs and measurements
+  """
   def __init__(self,**kwargs):
       super().__init__(**kwargs)
-      
+      """allows specified arguments to be passed up to the warehouse class upon instantiation
+      """
   def calculate_x_pos(self):
+    """calculates all of the x positions for each shelf in the warehouse.
+    the scaling factor is just the length of one shelf, and it allows the method to keep track of where it is in the x plane.
+    
+    Returns:
+        array: returns an array of all the x positions for each shelf in the warehouse.
+    """
     scaling_factor = self.shelves.length
     xpos = []
 
     for i in range(self.y_grid_space+1):
       counter = 0
       for j in range(1,self.x_grid_space+1):
-        
+        #this is the back wall. in english this reads: if you are at the back wall, and youre in the middle of the wall, put another shelf here.
         if (i == self.y_grid_space) and (j == ((self.x_grid_space // 2)+1)):
           xpos.append(counter+scaling_factor)
           counter += scaling_factor
         
+        #this reads like: if you are in the middle of the rows, put the other rows all the way over on the other wall.
+        #self.width - counter is what specifies this.
         if j == (self.x_grid_space // 2)+1:
           xpos.append((self.width-counter))
           counter += (scaling_factor*2)
           continue
 
+        #if you are at the beginning of the wall, put the shelf right here and then incriment the counter by 1 shelf.
         if j == 1:
           xpos.append(0)
           counter += scaling_factor
           continue
         
+        #if this is the very last shelf, adjust the counter over one shelf to account for the extra one in the middle.
         if (i == 5) and (j==4):
           counter-=scaling_factor
 
+        #normally just put shelf where the counter tells you to.
         xpos.append(counter)
         counter += scaling_factor
 
     return xpos
   
   def calculate_y_pos(self):
-    
+    """calculates the y positions for each shelf in the warehouse.
+      the scaling factor is the depth of one shelf plus the space of the walking lane.
+
+    Returns:
+        array: returns all of the y positions of each shelf in the warehouse.
+    """
     ypos = []
     counter = 0
     scaling_factor = (self.shelves.depth + self.lane_width_size)
@@ -55,10 +77,18 @@ class Warehouse_Visualization(Warehouse):
     return ypos
   
   def calculate_z_pos(self):
+    """calculates the total number of z spaces for shelvees in the warehouse.
+
+    Returns:
+        int: the total number of available z spaces.
+    """
     zpos = (self.x_grid_space*(self.y_grid_space+1)) + 1
     return zpos
 
   def plot_grid(self):
+    """this does all of the calculations to determine the position each shelf in the warehouse, and then it plots the 3d graph
+    of the warehouse using matplotlib
+    """
     fig = plt.figure()
     ax = fig.add_subplot(111, projection = "3d")
 
