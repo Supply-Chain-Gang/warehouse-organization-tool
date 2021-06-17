@@ -20,6 +20,7 @@ class Warehouse:
     self.x_grid_space = 0
     self.y_grid_space = 0
     self.z_grid_space = 0
+    self.leftover_x_space = 0
     self.grid = None
     self.locations_of_items = {}
     self.data_analyzer = DataAnalytics(df)
@@ -42,7 +43,7 @@ class Warehouse:
     y_shelves = (self.length - shelf.depth - self.lane_width_size)//(shelf.depth + self.lane_width_size)
     # z_shelves = (x_shelves + y_shelves + num_shelves_back_wall)*(self.height//shelf.height)
     z_shelves = (self.height//shelf.height)
-    self.x_grid_space,self.y_grid_space,self.z_grid_space = x_shelves,y_shelves,z_shelves
+    self.x_grid_space,self.y_grid_space,self.z_grid_space,self.leftover_x_space = x_shelves,y_shelves,z_shelves, self.width-(x_shelves*shelf.length)
     return x_shelves,y_shelves,z_shelves,num_shelves_back_wall
 
   def place_shelves(self):

@@ -31,14 +31,14 @@ class Warehouse_Visualization(Warehouse):
       for j in range(1,self.x_grid_space+1):
         #this is the back wall. in english this reads: if you are at the back wall, and youre in the middle of the wall, put another shelf here.
         if (i == self.y_grid_space) and (j == ((self.x_grid_space // 2)+1)):
-          xpos.append(counter+scaling_factor)
+          xpos.append(counter)
           counter += scaling_factor
-        
+          
         #this reads like: if you are in the middle of the rows, put the other rows all the way over on the other wall.
         #self.width - counter is what specifies this.
-        if j == (self.x_grid_space // 2)+1:
-          xpos.append((self.width-counter))
-          counter += (scaling_factor*2)
+        if (j == (self.x_grid_space // 2)+1) and not (i == self.y_grid_space):
+          xpos.append((counter+(self.leftover_x_space)))
+          counter += scaling_factor+self.leftover_x_space
           continue
 
         #if you are at the beginning of the wall, put the shelf right here and then incriment the counter by 1 shelf.
@@ -47,14 +47,12 @@ class Warehouse_Visualization(Warehouse):
           counter += scaling_factor
           continue
         
-        #if this is the very last shelf, adjust the counter over one shelf to account for the extra one in the middle.
-        if (i == 5) and (j==4):
-          counter-=scaling_factor
-
+        # if (i == self.y_grid_space) and (j == ((self.x_grid_space))):
+        #   xpos.append(counter+scaling_factor)
         #normally just put shelf where the counter tells you to.
         xpos.append(counter)
         counter += scaling_factor
-
+    
     return xpos
   
   def calculate_y_pos(self):
@@ -97,7 +95,7 @@ class Warehouse_Visualization(Warehouse):
     ax.set_zlabel("height of room in inches")
     ax.set_xlim3d(0,self.width)
     ax.set_ylim3d(0,self.length)
-    ax.set_zlim3d(0,self.height) 
+    ax.set_zlim3d(0,self.height*3) 
 
     ypos = self.calculate_y_pos()
     zpos = np.zeros(self.calculate_z_pos())
@@ -105,11 +103,16 @@ class Warehouse_Visualization(Warehouse):
 
     dx = [self.shelves.length-20]
     dy = [self.shelves.depth]
-    dz = [self.shelves.height for _ in range(2)]
+    dz = [self.shelves.height for _ in range(self.z_grid_space)]
 
     _zpos = zpos   # the starting zpos for each bar
-    colors = ['b','r']
-    for i in range(2):
+    
+    colors = ''
+    for _ in range(self.z_grid_space//2):
+      colors+='rb'
+      
+    colors = list(colors)
+    for i in range(self.z_grid_space):
         ax.bar3d(xpos, ypos, _zpos, dx, dy, dz[i], color=colors[i], alpha=0.6)
         _zpos += dz[i]    # add the height of each bar to know where to start the next
 
